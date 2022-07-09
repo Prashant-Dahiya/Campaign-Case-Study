@@ -1,0 +1,822 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2021.4">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="114" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File OutputFileName="" RecordLimit="" SearchSubDirs="False" FileFormat="8">C:\Users\prash\OneDrive\Documents\CTC\Alteryx\10.4-spend data for campaigns data file.xls|||`Sheet1$`</File>
+          <FormatSpecificOptions>
+            <FirstRowData>False</FirstRowData>
+            <NoProgress>False</NoProgress>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>10.4-spend data for campaigns data file.xls
+Query=`Sheet1$`</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="S No " source="File: C:\Users\prash\OneDrive\Documents\CTC\Alteryx\10.4-spend data for campaigns data file.xls|||`Sheet1$`" type="Double" />
+            <Field name="channel " size="255" source="File: C:\Users\prash\OneDrive\Documents\CTC\Alteryx\10.4-spend data for campaigns data file.xls|||`Sheet1$`" type="V_WString" />
+            <Field name="Campaigns" size="255" source="File: C:\Users\prash\OneDrive\Documents\CTC\Alteryx\10.4-spend data for campaigns data file.xls|||`Sheet1$`" type="V_WString" />
+            <Field name="Duration" size="255" source="File: C:\Users\prash\OneDrive\Documents\CTC\Alteryx\10.4-spend data for campaigns data file.xls|||`Sheet1$`" type="V_WString" />
+            <Field name="Category" size="255" source="File: C:\Users\prash\OneDrive\Documents\CTC\Alteryx\10.4-spend data for campaigns data file.xls|||`Sheet1$`" type="V_WString" />
+            <Field name="product " size="255" source="File: C:\Users\prash\OneDrive\Documents\CTC\Alteryx\10.4-spend data for campaigns data file.xls|||`Sheet1$`" type="V_WString" />
+            <Field name="Spend" size="255" source="File: C:\Users\prash\OneDrive\Documents\CTC\Alteryx\10.4-spend data for campaigns data file.xls|||`Sheet1$`" type="V_WString" />
+            <Field name="F8" size="255" source="File: C:\Users\prash\OneDrive\Documents\CTC\Alteryx\10.4-spend data for campaigns data file.xls|||`Sheet1$`" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="258" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="True" />
+          <UpdateField_Name>Campaigns</UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>IF IsEmpty([Campaigns]) THEN [Row-1:Campaigns] ELSE [Campaigns] ENDIF</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IF IsEmpty([Campaigns]) THEN [Row-1:Campaigns] ELSE [Campaign...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="390" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="True" />
+          <UpdateField_Name>Duration</UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>IF IsEmpty([Duration]) THEN [Row-1:Duration] ELSE [Duration] ENDIF</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IF IsEmpty([Duration]) THEN [Row-1:Duration] ELSE [Duration] ...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="522" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="True" />
+          <UpdateField_Name><![CDATA[product ]]></UpdateField_Name>
+          <CreateField_Name>New Field</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>IF IsEmpty([product ]) THEN [Row-1:product ] ELSE [product ] ENDIF</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>IF IsEmpty([product ]) THEN [Row-1:product ] ELSE [product ] ...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="666" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="product " selected="True" rename="Product" />
+            <SelectField field="F8" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings>
+        <Position x="798" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="Check Box (135)">False</Value>
+          <Value name="Check Box (136)">False</Value>
+          <Value name="List Box (11)">"Spend"</Value>
+          <Value name="Check Box (84)">False</Value>
+          <Value name="Check Box (117)">False</Value>
+          <Value name="Check Box (15)">True</Value>
+          <Value name="Check Box (109)">False</Value>
+          <Value name="Check Box (122)">True</Value>
+          <Value name="Check Box (53)">False</Value>
+          <Value name="Check Box (58)">False</Value>
+          <Value name="Check Box (70)">True</Value>
+          <Value name="Check Box (77)">False</Value>
+          <Value name="Drop Down (81)">upper</Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="Cleanse.yxmc" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="918" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Spend" selected="True" type="Double" size="8" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="1062" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Duration</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>Duration</RootName>
+          <Delimeters value="-" />
+          <NumFields value="2" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1206" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Duration1" selected="True" rename="Start Date" />
+            <SelectField field="Duration2" selected="True" rename="End Date" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+        <Position x="1350" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <IsFrom value="False" />
+          <InputFieldName>Start Date</InputFieldName>
+          <Language>English</Language>
+          <Format>dd/MM/yy</Format>
+          <OutputFieldName>Start_Date_NR</OutputFieldName>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Convert Start Date From:
+dd/MM/yy</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DateTime.DateTime">
+        <Position x="1482" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <IsFrom value="False" />
+          <InputFieldName>End Date</InputFieldName>
+          <Language>English</Language>
+          <Format>dd/MM/yy</Format>
+          <OutputFieldName>End_Date_NR</OutputFieldName>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Convert End Date From:
+dd/MM/yy</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDateTime" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1614" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeFormat([Start_Date_NR],'%A')" field="Start_date_day_of_week" size="1073741823" type="V_WString" />
+            <FormulaField expression="DateTimeFormat([End_Date_NR],'%A')" field="End_date_day_of_week" size="1073741823" type="V_WString" />
+            <FormulaField expression="if     Start_date_day_of_week= 'Monday'    then  4 &#xA;elseif Start_date_day_of_week= 'Tuesday'   then  3&#xA;elseif Start_date_day_of_week= 'Wednesday' then  2&#xA;elseif Start_date_day_of_week= 'Thursday'  then  1&#xA;elseif Start_date_day_of_week= 'Saturday'  then  6&#xA;elseif Start_date_day_of_week= 'Sunday'    then  5&#xA;elseif Start_date_day_of_week= 'Friday'    then  0&#xA;else 0&#xA;&#xA;endif&#xA;" field="daystoadd_start_dt" size="4" type="Int32" />
+            <FormulaField expression="DateTimeAdd([Start_Date_NR],[daystoadd_start_dt],'days')" field="Friday_Start_Date" size="10" type="Date" />
+            <FormulaField expression="if     [End_date_day_of_week]= 'Monday'    then  DateTimeAdd([End_Date_NR],4,'days')&#xA;elseif [End_date_day_of_week]= 'Tuesday'   then  DateTimeAdd([End_Date_NR],3,'days')&#xA;elseif [End_date_day_of_week]= 'Wednesday' then  DateTimeAdd([End_Date_NR],2,'days')&#xA;elseif [End_date_day_of_week]= 'Thursday'  then  DateTimeAdd([End_Date_NR],1,'days')&#xA;elseif [End_date_day_of_week]= 'Saturday'  then  DateTimeAdd([End_Date_NR],6,'days')&#xA;elseif [End_date_day_of_week]= 'Sunday'    then  DateTimeAdd([End_Date_NR],5,'days')&#xA;elseif [End_date_day_of_week]= 'Friday'    then  DateTimeAdd([End_Date_NR],0,'days')&#xA;else 0&#xA;&#xA;endif" field="Friday_End_Date" size="10" type="Date" />
+            <FormulaField expression="DateTimeDiff([End_Date_NR],[Start_Date_NR],'days')+1" field="No of days" size="4" type="Int32" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Start_date_day_of_week = DateTimeFormat([Start_Date_NR],'%A')
+End_date_day_of_we...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1325" y="301" width="178" height="244" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 16</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="13">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1350" y="354" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="DateTimeFormat([Start Date NR],'%A')" field="Start_Date_day_of_week" size="1073741823" type="V_WString" />
+                <FormulaField expression="DateTimeFormat([End Date NR],'%A')" field="End_day_day_of_week" size="1073741823" type="V_WString" />
+                <FormulaField expression="if 	   Start_date_day_of_week= 'Monday'    then  4 &#xA;elseif Start_date_day_of_week= 'Tuesday'   then  3&#xA;elseif Start_date_day_of_week= 'Wednesday' then  2&#xA;elseif Start_date_day_of_week= 'Thursday'  then  1&#xA;elseif Start_date_day_of_week= 'Saturday'  then  6&#xA;elseif Start_date_day_of_week= 'Sunday'    then  5&#xA;elseif Start_date_day_of_week= 'Friday'    then  0&#xA;else 0&#xA;&#xA;endif" field="daytoadd_start_date" size="1073741823" type="V_WString" />
+                <FormulaField expression="DateTimeAdd([Start Date NR],[daystoadd_start_date],'days')" field="Friday_start_date" size="1073741823" type="V_WString" />
+                <FormulaField expression="if     [End_date_day_of_week]= 'Monday'    then  DateTimeAdd([End Date NR],4,'days')&#xA;elseif [End_date_day_of_week]= 'Tuesday'   then  DateTimeAdd([End Date NR],3,'days')&#xA;elseif [End_date_day_of_week]= 'Wednesday' then  DateTimeAdd([End Date NR],2,'days')&#xA;elseif [End_date_day_of_week]= 'Thursday'  then  DateTimeAdd([End Date NR],1,'days')&#xA;elseif [End_date_day_of_week]= 'Saturday'  then  DateTimeAdd([End Date NR],6,'days')&#xA;elseif [End_date_day_of_week]= 'Sunday'    then  DateTimeAdd([End Date NR],5,'days')&#xA;elseif [End_date_day_of_week]= 'Friday'    then  DateTimeAdd([End Date NR],0,'days')&#xA;else 0&#xA;&#xA;endif" field="Friday_end_date" size="1073741823" type="V_WString" />
+                <FormulaField expression="DateTimeDiff([End_Date_NR],[Start_Date_NR],'days')+1" field="No of days" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Start_Date_day_of_week = DateTimeFormat([Start Date NR],'%A')
+End_day_day_of_wee...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1746" y="294" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Start_Date_NR" action="Min" rename="Min_Friday_Start_Date" />
+            <SummarizeField field="End_Date_NR" action="Max" rename="Max_Friday_End_Date" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1878" y="306" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeDiff([Max_Friday_End_Date],[Min_Friday_Start_Date],'days')" field="noof_max_weeks_to_generate" size="4" type="Int32" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>noof_max_weeks_to_generate = DateTimeDiff([Max_Friday_End_Date],[Min_Friday_Star...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
+        <Position x="2034" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name />
+          <CreateField_Name>days_counter</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <Expression_Init>0</Expression_Init>
+          <Expression_Cond>days_counter &lt;= [noof_max_weeks_to_generate]</Expression_Cond>
+          <Expression_Loop>days_counter + 7</Expression_Loop>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxGenerateRows" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2166" y="330" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeAdd([Min_Friday_Start_Date],[days_counter],'days')" field="Friday_weekday" size="10" type="Date" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Friday_weekday = DateTimeAdd([Min_Friday_Start_Date],[days_counter],'days')
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2262" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="noof_max_weeks_to_generate" selected="False" />
+            <SelectField field="days_counter" selected="False" />
+            <SelectField field="Min_Friday_Start_Date" selected="False" />
+            <SelectField field="Max_Friday_End_Date" selected="False" />
+            <SelectField field="Friday_weekday" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="2346" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Allow</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2442" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [Friday_weekday] &gt;= [Friday_Start_Date] and [Friday_weekday] &lt;= [Friday_End_Date] then 'keep' else 'remove' endif" field="keep flag" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>keep flag = if [Friday_weekday] &gt;= [Friday_Start_Date] and [Friday_weekday] &lt;= [...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2562" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if DateTimeDiff([Friday_weekday],[Start_Date_NR],'days')&lt;=6 then  DateTimeDiff([Friday_weekday],[Start_Date_NR],'days')+1&#xA;&#xA;elseif	DateTimeDiff([Friday_weekday], [End_Date_NR],'days')&lt;=6 and &#xA;        DateTimeDiff([Friday_weekday], [End_Date_NR],'days')&gt;=0&#xA;                                                               then  7-DateTimeDiff([Friday_weekday], [End_Date_NR],'days')&#xA;&#xA;&#xA;else 7 &#xA;endif	&#xA;&#xA;" field="No_of_days_per_week_in capmaign" size="4" type="Int32" />
+            <FormulaField expression="REGEX_CountMatches([Product],'-')+1" field="No of products" size="4" type="Int32" />
+            <FormulaField expression="([Spend]*[No_of_days_per_week_in capmaign])/([No of days]*[No of products])" field="Spend per product_per_week" size="8" type="Double" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>No_of_days_per_week_in capmaign = if DateTimeDiff([Friday_weekday],[Start_Date_N...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="2706" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Product</Field>
+          <ErrorHandling>Last</ErrorHandling>
+          <RootName>Product</RootName>
+          <Delimeters value="-" />
+          <NumFields value="3" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2826" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Start_Date" selected="False" />
+            <SelectField field="End_Date" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+        <Position x="2946" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ErrorWarn>Warn</ErrorWarn>
+          <KeyFields>
+            <Field field="S No " />
+            <Field field="channel " />
+            <Field field="Campaigns" />
+            <Field field="Duration" />
+            <Field field="Category" />
+            <Field field="Product" />
+            <Field field="Spend" />
+            <Field field="Start Date" />
+            <Field field="End Date" />
+            <Field field="Start_Date_NR" />
+            <Field field="End_Date_NR" />
+            <Field field="Start_date_day_of_week" />
+            <Field field="End_date_day_of_week" />
+            <Field field="daystoadd_start_dt" />
+            <Field field="Friday_Start_Date" />
+            <Field field="Friday_End_Date" />
+            <Field field="No of days" />
+            <Field field="Friday_weekday" />
+            <Field field="keep flag" />
+            <Field field="No_of_days_per_week_in capmaign" />
+            <Field field="No of products" />
+            <Field field="Spend per product_per_week" />
+          </KeyFields>
+          <DataFields>
+            <Field field="S No " selected="False" />
+            <Field field="channel " selected="False" />
+            <Field field="Campaigns" selected="False" />
+            <Field field="Duration" selected="False" />
+            <Field field="Category" selected="False" />
+            <Field field="Product" selected="False" />
+            <Field field="Spend" selected="False" />
+            <Field field="Start Date" selected="False" />
+            <Field field="End Date" selected="False" />
+            <Field field="Start_Date_NR" selected="False" />
+            <Field field="End_Date_NR" selected="False" />
+            <Field field="Start_date_day_of_week" selected="False" />
+            <Field field="End_date_day_of_week" selected="False" />
+            <Field field="daystoadd_start_dt" selected="False" />
+            <Field field="Friday_Start_Date" selected="False" />
+            <Field field="Friday_End_Date" selected="False" />
+            <Field field="No of days" selected="False" />
+            <Field field="Friday_weekday" selected="False" />
+            <Field field="keep flag" selected="False" />
+            <Field field="No_of_days_per_week_in capmaign" selected="False" />
+            <Field field="No of products" selected="False" />
+            <Field field="Spend per product_per_week" selected="False" />
+            <Field field="Product1" selected="True" />
+            <Field field="Product2" selected="True" />
+            <Field field="Product3" selected="True" />
+            <Field field="*Unknown" selected="False" />
+          </DataFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+    </Node>
+    <Node ToolID="30">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="3054" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Value" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="31">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="3162" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNotNull</Operator>
+            <Field>Product</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2022-01-16 17:12:36</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2022-01-16 17:12:36</StartDate>
+              <EndDate>2022-01-16 17:12:36</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([Product])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output26" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="23" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="23" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="20" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="26" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="28" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="28" Connection="Output" />
+      <Destination ToolID="30" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="30" Connection="Output" />
+      <Destination ToolID="31" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Campaign Workflow Self.bak</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="745bff6a-67d8-43ba-ab86-0ea5f78f4a34" />
+      <Telemetry>
+        <PreviousWorkflowId value="6e4d21f5-6a81-4976-9c2a-660d3eb89e8b" />
+        <OriginWorkflowId value="6e4d21f5-6a81-4976-9c2a-660d3eb89e8b" />
+      </Telemetry>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
